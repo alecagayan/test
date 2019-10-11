@@ -5,12 +5,15 @@ import re
 class MyClient(discord.Client):
     async def on_ready(self):
     
+    #sets status
         await client.change_presence(status=discord.Status.do_not_disturb, activity=discord.Game('with your emotions'))
+    #says who its logged in as
         print('Logged in as:')
         print(self.user.name)
         print(self.user.id)
         print('------')
 
+    #reads message and replies
     async def on_message(self, message):
 
         if 'cookie' in message.content:
@@ -26,4 +29,4 @@ class MyClient(discord.Client):
             await message.channel.send(':beer:'.format(message))
 
 client = MyClient()
-client.run('NDgwNDUxNDM5MTgxOTU1MDkz.XaCDQg.wvCQm2H-K-5E41-0MJuEQYn6vEc')
+client.run('token')
